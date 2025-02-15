@@ -72,4 +72,5 @@ To play **Memory Wipe**, follow these steps:
 ### Feedback
 - If you have any feedback, suggestions, or bug reports, please open an issue on this repository.
 
-- Enjoy the game, and remember: every memory you erase changes who you are.
+### Enjoy the game, and remember: 
+- Every memory you erase changes who you are.
