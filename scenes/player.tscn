@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxoymitxe8xrj"]
+
+[ext_resource type="Script" path="res://addons/Basic FPS Player/Src/basic_player_startup.gd" id="1_rq8rd"]
+[ext_resource type="PackedScene" uid="uid://kmyakts4l64t" path="res://addons/Basic FPS Player/Src/basic_player_head.tscn" id="2_ctpwn"]
+[ext_resource type="PackedScene" uid="uid://b1upeiw22fi25" path="res://assets/models/Arms/FPS_Psx_Hnds.fbx" id="3_bmn10"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uaqc1"]
+radius = 0.355623
+
+[node name="Player" type="Node3D"]
+
+[node name="Basic FPS Player" type="CharacterBody3D" parent="."]
+script = ExtResource("1_rq8rd")
+KEY_BIND_UP = "move_forward"
+KEY_BIND_LEFT = "move_left"
+KEY_BIND_RIGHT = "move_right"
+KEY_BIND_DOWN = "move_back"
+KEY_BIND_JUMP = "jump"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Basic FPS Player"]
+transform = Transform3D(1.09463, 0, 0, 0, 1.09463, 0, 0, 0, 1.09463, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_uaqc1")
+
+[node name="Head" type="Node3D" parent="Basic FPS Player" instance=ExtResource("2_ctpwn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.706084, 0.339514)
+
+[node name="FPS_Psx_Hnds" parent="Basic FPS Player/Head" instance=ExtResource("3_bmn10")]
+transform = Transform3D(-1, 8.63937e-08, -1.33744e-08, 0, 0.152986, 0.988228, 8.74228e-08, 0.988228, -0.152986, -0.0135821, -0.244468, -0.1678)
