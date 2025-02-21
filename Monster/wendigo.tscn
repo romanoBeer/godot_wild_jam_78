@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cqowhe8hpj7s4"]
+
+[ext_resource type="Script" path="res://Monster/wendigo.gd" id="1_bubxs"]
+[ext_resource type="PackedScene" uid="uid://emotcb44rbe3" path="res://Monster/wendigo_character.tscn" id="1_n8ea8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_46smc"]
+height = 2.45521
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_t0kuf"]
+height = 0.297275
+radius = 0.717674
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8hqux"]
+size = Vector3(1, 1, 1.59521)
+
+[node name="Wendigo" type="CharacterBody3D"]
+transform = Transform3D(4.788, 0, 0, 0, 4.788, 0, 0, 0, 4.788, 0, 0, 0)
+script = ExtResource("1_bubxs")
+walking_speed = 1.0
+chasing_speed = 2.0
+wander_time = 30.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.509353, 0, 0, 0, 0.6, 0, 0.739373, 0)
+shape = SubResource("CapsuleShape3D_46smc")
+disabled = true
+
+[node name="wendigo_character" parent="." instance=ExtResource("1_n8ea8")]
+transform = Transform3D(-0.2, 0, -1.74846e-08, 0, 0.2, 0, 1.74846e-08, 0, -0.2, 0, 0, 0)
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="BiggerDetector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BiggerDetector"]
+transform = Transform3D(8.93158, 0, 0, 0, 8.93158, 0, 0, 0, 8.93158, 0, 0.782456, 0)
+shape = SubResource("CylinderShape3D_t0kuf")
+
+[node name="Detector" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Detector"]
+transform = Transform3D(1.5022, 0, 0, 0, 0.972396, 0, 0, 0, 3.35293, 0.0240501, 0.795778, -2.72259)
+shape = SubResource("BoxShape3D_8hqux")
+
+[connection signal="body_entered" from="BiggerDetector" to="." method="_on_bigger_detector_body_entered"]
+[connection signal="body_exited" from="BiggerDetector" to="." method="_on_bigger_detector_body_exited"]
+[connection signal="body_entered" from="Detector" to="." method="_on_detector_body_entered"]
+[connection signal="body_exited" from="Detector" to="." method="_on_detector_body_exited"]

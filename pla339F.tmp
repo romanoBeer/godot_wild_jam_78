@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdk6hwb4hi2wc"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_2f8j2"]
+[ext_resource type="Shader" path="res://view.gdshader" id="2_t10dx"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3rsb5"]
+radius = 0.3
+height = 1.8
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sqded"]
+shader = ExtResource("2_t10dx")
+shader_parameter/aspect = 1.0
+shader_parameter/distortion = 1.0
+shader_parameter/radius = 1.07
+shader_parameter/alpha = 1.0
+shader_parameter/crop = 0.943
+shader_parameter/crop_color = Color(0, 0, 0, 1)
+shader_parameter/crop_feathering = 0.1
+shader_parameter/channel_offset = 0.005
+shader_parameter/noise_strength = 7.0
+
+[node name="Player" type="CharacterBody3D"]
+transform = Transform3D(1.521, 0, 0, 0, 1.521, 0, 0, 0, 1.521, 0, 0, 0)
+script = ExtResource("1_2f8j2")
+
+[node name="CShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_3rsb5")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+fov = 85.0
+
+[node name="Flashlight" type="SpotLight3D" parent="Camera"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.5857, 0)
+light_energy = 3.59
+shadow_enabled = true
+spot_range = 20.0
+spot_angle = 30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera"]
+
+[node name="ColorRect" type="ColorRect" parent="Camera/CanvasLayer"]
+material = SubResource("ShaderMaterial_sqded")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 1)

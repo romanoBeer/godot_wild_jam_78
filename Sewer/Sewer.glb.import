@@ -1,0 +1,249 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cfmryk7jwyk0b"
+path="res://.godot/imported/Sewer.glb-97df621c199483c63ea2936a1b8ea978.scn"
+
+[deps]
+
+source_file="res://Sewer/Sewer.glb"
+dest_files=["res://.godot/imported/Sewer.glb-97df621c199483c63ea2936a1b8ea978.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:Cylinder": {
+"generate/physics": true
+},
+"PATH:Serwers": {
+"generate/physics": true
+},
+"PATH:Serwers01": {
+"generate/physics": true
+},
+"PATH:Serwers01_001": {
+"generate/physics": true
+},
+"PATH:Serwers01_002": {
+"generate/physics": true
+},
+"PATH:Serwers01_003": {
+"generate/physics": true
+},
+"PATH:Serwers01_004": {
+"generate/physics": true
+},
+"PATH:Serwers01_005": {
+"generate/physics": true
+},
+"PATH:Serwers01_006": {
+"generate/physics": true
+},
+"PATH:Serwers01_007": {
+"generate/physics": true
+},
+"PATH:Serwers01_008": {
+"generate/physics": true
+},
+"PATH:Serwers01_009": {
+"generate/physics": true
+},
+"PATH:Serwers01_010": {
+"generate/physics": true
+},
+"PATH:Serwers01_011": {
+"generate/physics": true
+},
+"PATH:Serwers02": {
+"generate/physics": true
+},
+"PATH:Serwers02_001": {
+"generate/physics": true
+},
+"PATH:Serwers02_002": {
+"generate/physics": true
+},
+"PATH:Serwers02_003": {
+"generate/physics": true
+},
+"PATH:Serwers02_004": {
+"generate/physics": true
+},
+"PATH:Serwers02_005": {
+"generate/physics": true
+},
+"PATH:Serwers02_006": {
+"generate/physics": true
+},
+"PATH:Serwers02_007": {
+"generate/physics": true
+},
+"PATH:Serwers02_008": {
+"generate/physics": true
+},
+"PATH:Serwers02_009": {
+"generate/physics": true
+},
+"PATH:Serwers02_010": {
+"generate/physics": true
+},
+"PATH:SerwersP": {
+"generate/physics": true
+},
+"PATH:SerwersP1": {
+"generate/physics": true
+},
+"PATH:SerwersP1_001": {
+"generate/physics": true
+},
+"PATH:SerwersP1_002": {
+"generate/physics": true
+},
+"PATH:SerwersP1_003": {
+"generate/physics": true
+},
+"PATH:SerwersP1_004": {
+"generate/physics": true
+},
+"PATH:SerwersP1_005": {
+"generate/physics": true
+},
+"PATH:SerwersP1_006": {
+"generate/physics": true
+},
+"PATH:SerwersP1_007": {
+"generate/physics": true
+},
+"PATH:SerwersP1_008": {
+"generate/physics": true
+},
+"PATH:SerwersP1_009": {
+"generate/physics": true
+},
+"PATH:SerwersP1_010": {
+"generate/physics": true
+},
+"PATH:SerwersP1_011": {
+"generate/physics": true
+},
+"PATH:SerwersP1_012": {
+"generate/physics": true
+},
+"PATH:SerwersP_001": {
+"generate/physics": true
+},
+"PATH:SerwersP_002": {
+"generate/physics": true
+},
+"PATH:SerwersP_003": {
+"generate/physics": true
+},
+"PATH:SerwersP_004": {
+"generate/physics": true
+},
+"PATH:SerwersP_005": {
+"generate/physics": true
+},
+"PATH:SerwersP_006": {
+"generate/physics": true
+},
+"PATH:SerwersP_007": {
+"generate/physics": true
+},
+"PATH:SerwersP_008": {
+"generate/physics": true
+},
+"PATH:SerwersP_009": {
+"generate/physics": true
+},
+"PATH:SerwersP_010": {
+"generate/physics": true
+},
+"PATH:SerwersP_011": {
+"generate/physics": true
+},
+"PATH:SerwersP_012": {
+"generate/physics": true
+},
+"PATH:SerwersP_013": {
+"generate/physics": true
+},
+"PATH:Serwers_001": {
+"generate/physics": true
+},
+"PATH:Serwers_002": {
+"generate/physics": true
+},
+"PATH:Serwers_003": {
+"generate/physics": true
+},
+"PATH:Serwers_004": {
+"generate/physics": true
+},
+"PATH:Serwers_005": {
+"generate/physics": true
+},
+"PATH:Serwers_006": {
+"generate/physics": true
+},
+"PATH:Serwers_007": {
+"generate/physics": true
+},
+"PATH:Serwers_008": {
+"generate/physics": true
+},
+"PATH:Serwers_009": {
+"generate/physics": true
+},
+"PATH:Serwers_010": {
+"generate/physics": true
+},
+"PATH:Serwers_011": {
+"generate/physics": true
+},
+"PATH:Serwers_012": {
+"generate/physics": true
+},
+"PATH:Serwers_013": {
+"generate/physics": true
+},
+"PATH:Serwers_014": {
+"generate/physics": true
+},
+"PATH:Serwers_015": {
+"generate/physics": true
+},
+"PATH:door_metal": {
+"generate/physics": true
+},
+"PATH:door_metal_01": {
+"generate/physics": true
+},
+"PATH:door_metal_02": {
+"generate/physics": true
+}
+}
+}
+gltf/naming_version=1
+gltf/embedded_image_handling=1
