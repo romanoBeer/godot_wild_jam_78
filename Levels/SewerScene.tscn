@@ -30,10 +30,12 @@
 [ext_resource type="AudioStream" uid="uid://c6nxfgbi8j6jq" path="res://Sounds/creepy-ahh-wind.mp3" id="28_pg43u"]
 
 [sub_resource type="Environment" id="Environment_nqi45"]
+background_mode = 1
 reflected_light_source = 1
 ssr_enabled = true
 ssao_enabled = true
 ssil_enabled = true
+sdfgi_enabled = true
 sdfgi_use_occlusion = true
 glow_enabled = true
 glow_bloom = 0.1
@@ -601,7 +603,9 @@ data = PackedVector3Array(0, -3.22174, 0.387535, 0.033167, 3.03813, 0.411632, 0,
 resource_name = "brick_modern"
 cull_mode = 2
 albedo_texture = ExtResource("4_ikvl0")
-uv1_scale = Vector3(7, 1, 1)
+uv1_scale = Vector3(0.2, 0.415, 0.17)
+uv1_triplanar = true
+uv1_world_triplanar = true
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6te5d"]
@@ -913,14 +917,18 @@ data = PackedVector3Array(-0.0247854, -1.00591, 1.2416, -0.0247854, -8.41022e-05
 resource_name = "concrete_bare_01"
 cull_mode = 2
 albedo_texture = ExtResource("5_jkn6e")
-uv1_scale = Vector3(8, 1, 1)
+uv1_scale = Vector3(1, 0.61, 0.885)
+uv1_triplanar = true
+uv1_world_triplanar = true
 texture_filter = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3nvt"]
 resource_name = "brick_pavement"
 cull_mode = 2
 albedo_texture = ExtResource("6_2gmj3")
-uv1_scale = Vector3(8, 1, 1)
+uv1_scale = Vector3(0.53, 0.545, 0.55)
+uv1_triplanar = true
+uv1_world_triplanar = true
 texture_filter = 2
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_ybp63"]
@@ -4498,7 +4506,7 @@ spot_angle = 64.38
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -56, 16.3, 124)
 light_color = Color(0.999999, 0.997538, 0.805949, 1)
 light_energy = 9.566
-light_volumetric_fog_energy = 2.0
+light_volumetric_fog_energy = 1.5
 shadow_enabled = true
 shadow_blur = 10.0
 spot_range = 4096.0

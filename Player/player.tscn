@@ -10,15 +10,15 @@ height = 1.8
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sqded"]
 shader = ExtResource("2_t10dx")
-shader_parameter/aspect = 1.0
+shader_parameter/aspect = 0.2
 shader_parameter/distortion = 1.0
 shader_parameter/radius = 1.07
 shader_parameter/alpha = 1.0
 shader_parameter/crop = 0.943
 shader_parameter/crop_color = Color(0, 0, 0, 1)
 shader_parameter/crop_feathering = 0.1
-shader_parameter/channel_offset = 0.005
-shader_parameter/noise_strength = 7.0
+shader_parameter/channel_offset = 0.011
+shader_parameter/noise_strength = 10.0
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(0.97344, 0, 0, 0, 0.97344, 0, 0, 0, 0.97344, 0, 0, 0)
