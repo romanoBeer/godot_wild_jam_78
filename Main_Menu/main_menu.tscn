@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk3mm00hqg8ei"]
+
+[ext_resource type="Script" path="res://Main_Menu/main_menu.gd" id="1_wup2u"]
+[ext_resource type="AudioStream" uid="uid://kp12s5gp3u1s" path="res://Assets/sounds/785708__universfield__horror-background-atmosphere-19.mp3" id="2_dgr6x"]
+[ext_resource type="FontFile" uid="uid://04l4sb20gbk" path="res://Assets/Fonts/Cyberphont 2.0.ttf" id="4_1o6gc"]
+
+[sub_resource type="Theme" id="Theme_p0gcb"]
+/colors/font_hover = Color(1, 0, 0, 1)
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wup2u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dgr6x")
+autoplay = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 35.0
+offset_top = -126.0
+offset_right = 70.0
+grow_vertical = 0
+
+[node name="Start" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_p0gcb")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_1o6gc")
+text = "Start"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_hover_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_1o6gc")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

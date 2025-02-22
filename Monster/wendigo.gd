@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 enum State {
-WANDER,
-CHASE
+	WANDER,
+	CHASE
 }
 
 @export_group("Movement")
@@ -34,7 +34,9 @@ func _ready() -> void:
 		push_error("Player node not found! Ensure there's a node in the 'Player' group")
 		return
 	
-# Initialize random position after we confirm player exists
+	add_to_group("enemy")
+	
+	# Initialize random position after we confirm player exists
 	random_pos = Vector3(
 		randf_range(-75, 50),
 		global_position.y,
@@ -42,7 +44,7 @@ func _ready() -> void:
 	)
 	wandering(0)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if !player:
 		return
 		
@@ -55,12 +57,17 @@ func _process(delta: float) -> void:
 			wandering(delta)
 			SPEED = walking_speed
 			anim.speed_scale = 1.0
-
+			
 	var direction = nav_agent.get_next_path_position() - global_position
 	direction = direction.normalized()
-
 	velocity = velocity.lerp(direction * SPEED, delta * acceleration)
-
+	
+	# Check for collision with player
+	var collision = move_and_collide(velocity * delta, true) # Test only
+	if collision and collision.get_collider().is_in_group("Player"):
+		get_tree().change_scene_to_file("res://scenes/die.tscn")
+		return
+		
 	move_and_slide()
 
 func chase() -> void:
@@ -90,14 +97,13 @@ func wandering(delta: float) -> void:
 	else:
 		if !anim.is_playing() or anim.current_animation != "idle":
 			anim.play("idle")
-
+			
 	nav_agent.target_position = random_pos
-
 	var distance_to_target := Vector2(
 		random_pos.x - global_position.x,
 		random_pos.z - global_position.z
 	).length()
-
+	
 	if distance_to_target <= 5.0 or wander_timer <= 0.0:
 		var random_angle := randf() * TAU
 		var random_radius := randf_range(20.0, wander_radius)
@@ -109,7 +115,6 @@ func wandering(delta: float) -> void:
 			clamp(player.global_position.z + offset.y, -85.0, 20.0)
 		)
 		wander_timer = wander_time
-
 	wander_timer -= delta
 
 func _on_bigger_detector_body_entered(body: Node3D) -> void:
